@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Acserne Occesit — Portafolio</title>
+<meta name="description" content="Estudiante de Ingeniería en Informática que busca práctica laboral en desarrollo backend o soporte TI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    --bg: #DCE6EC;
+    --surface: #E9F0F4;
+    --ink: #0E2233;
+    --muted: #43586A;
+    --rule: #B4C4CF;
+    --accent: #F2B705;
+    --accent-ink: #0E2233;
+    --focus: #0B5FFF;
+    --ticket-bg: #FCFDFD;
+    --ticket-ink: #0E2233;
+    --ticket-muted: #55697A;
+    --ticket-rule: #9FB0BC;
+    color-scheme: light;
+  }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0B1620;
+      --surface: #122232;
+      --ink: #E7EEF3;
+      --muted: #9DB0BF;
+      --rule: #243A4C;
+      --focus: #7FB0FF;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0B1620;
+    --surface: #122232;
+    --ink: #E7EEF3;
+    --muted: #9DB0BF;
+    --rule: #243A4C;
+    --focus: #7FB0FF;
+    color-scheme: dark;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Barlow", "Helvetica Neue", Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-text-size-adjust: 100%;
+  }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 clamp(18px, 4vw, 32px); }
+  a { color: inherit; text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+  a:focus-visible, .btn:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+  h1, h2, h3, p, ul { margin-top: 0; }
+
+  /* Barra superior */
+  .top { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px 24px; padding: 20px 0; }
+  .top .name { font-family: "Barlow Condensed", "Arial Narrow", sans-serif; font-weight: 600; font-size: 1.3rem; letter-spacing: 0.01em; }
+  .top nav { display: flex; flex-wrap: wrap; gap: 4px 22px; }
+  .top nav a { text-decoration: none; border-bottom: 2px solid transparent; padding-bottom: 2px; }
+  .top nav a:hover { border-bottom-color: var(--accent); }
+
+  /* Hero */
+  .hero { display: grid; gap: 44px; padding: 32px 0 72px; align-items: center; }
+  h1 {
+    font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+    font-weight: 700;
+    font-size: clamp(3.4rem, 10vw, 6.8rem);
+    line-height: 0.92;
+    letter-spacing: -0.01em;
+    margin-bottom: 24px;
+  }
+  .lede { font-size: 1.2rem; max-width: 32em; margin-bottom: 12px; }
+  .lede-sub { color: var(--muted); max-width: 34em; margin-bottom: 28px; }
+  .cta { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn { display: inline-block; padding: 12px 20px; font-weight: 600; text-decoration: none; border-radius: 4px; border: 2px solid var(--ink); }
+  .btn-primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+  .btn-primary:hover { filter: brightness(0.94); }
+  .btn-secondary { color: var(--ink); }
+  .btn-secondary:hover { background: var(--ink); color: var(--bg); }
+
+  /* Boleta */
+  .ticket-wrap { justify-self: center; width: 100%; max-width: 380px; margin-top: 8px; filter: drop-shadow(0 14px 22px rgba(14, 34, 51, 0.24)); }
+  .ticket {
+    position: relative;
+    background: var(--ticket-bg);
+    color: var(--ticket-ink);
+    font-family: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+    font-size: 13.5px;
+    line-height: 1.5;
+    padding: 30px 24px 24px;
+  }
+  .ticket::before, .ticket::after { content: ""; position: absolute; left: 0; right: 0; height: 8px; background-repeat: repeat-x; background-size: 16px 8px; }
+  .ticket::before {
+    top: -8px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='8' viewBox='0 0 16 8'%3E%3Cpath d='M0 8 L8 0 L16 8 Z' fill='%23FCFDFD'/%3E%3C/svg%3E");
+  }
+  .ticket::after {
+    bottom: -8px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='8' viewBox='0 0 16 8'%3E%3Cpath d='M0 0 L8 8 L16 0 Z' fill='%23FCFDFD'/%3E%3C/svg%3E");
+  }
+  .ticket-name { font-size: 1.3rem; font-weight: 600; text-align: center; letter-spacing: 0.02em; }
+  .ticket-sub { text-align: center; color: var(--ticket-muted); margin: 2px 0 0; }
+  .dash { border: 0; border-top: 1px dashed var(--ticket-rule); margin: 14px 0; }
+  .line { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0 14px; padding: 5px 0; }
+  .line b { font-weight: 600; }
+  .line span { color: var(--ticket-muted); text-align: right; margin-left: auto; }
+  .total { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; background: var(--accent); color: var(--accent-ink); padding: 8px 10px; margin: 6px -4px 0; font-weight: 600; font-size: 1.05rem; }
+  .ticket-note { text-align: center; color: var(--ticket-muted); margin: 12px 0 0; font-size: 12.5px; }
+  .bars {
+    height: 34px; margin-top: 16px; opacity: 0.85;
+    background: repeating-linear-gradient(90deg, var(--ticket-ink) 0 2px, transparent 2px 4px, var(--ticket-ink) 4px 5px, transparent 5px 9px, var(--ticket-ink) 9px 12px, transparent 12px 14px);
+  }
+
+  /* Secciones */
+  section { padding: 56px 0; border-top: 1px solid var(--rule); }
+  h2 { font-family: "Barlow Condensed", "Arial Narrow", sans-serif; font-weight: 600; font-size: clamp(2rem, 4vw, 2.7rem); line-height: 1.05; margin-bottom: 28px; }
+  h3 { font-size: 1.1rem; font-weight: 600; line-height: 1.3; margin-bottom: 4px; }
+
+  /* Proyecto */
+  .project { display: grid; gap: 36px; }
+  .project h3.title { font-family: "Barlow Condensed", "Arial Narrow", sans-serif; font-weight: 700; font-size: 2rem; margin-bottom: 2px; }
+  .stack { color: var(--muted); margin-bottom: 16px; }
+  .status { border-left: 5px solid var(--accent); padding: 4px 0 4px 16px; margin: 20px 0; max-width: 36em; }
+  .facts { padding-left: 1.1em; max-width: 36em; }
+  .facts li { margin-bottom: 8px; }
+  .links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+  .menu-panel { background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; padding: 22px 22px 18px; align-self: start; }
+  .menu-panel h3 { margin-bottom: 2px; }
+  .menu-panel .hint { color: var(--muted); font-size: 0.95rem; margin-bottom: 8px; }
+  .menu { list-style: none; padding: 0; margin: 0; }
+  .menu li { padding: 7px 0; border-bottom: 1px dashed var(--rule); }
+  .menu li:last-child { border-bottom: 0; color: var(--muted); }
+
+  /* Experiencia */
+  .timeline { list-style: none; margin: 0 0 0 8px; padding: 0; }
+  .timeline li { position: relative; display: grid; gap: 4px; padding: 0 0 30px 26px; border-left: 2px solid var(--rule); }
+  .timeline li:last-child { padding-bottom: 0; }
+  .timeline li::before { content: ""; position: absolute; left: -9px; top: 6px; width: 16px; height: 16px; background: var(--bg); border: 2px solid var(--ink); border-radius: 50%; }
+  .timeline li:first-child::before { background: var(--accent); }
+  .when { font-family: "Barlow Condensed", "Arial Narrow", sans-serif; font-weight: 600; font-size: 1.35rem; line-height: 1.2; }
+  .place { color: var(--muted); margin-bottom: 6px; }
+  .role p:last-child { margin-bottom: 0; max-width: 38em; }
+
+  /* Habilidades */
+  .skills { display: grid; gap: 24px; }
+  .skills p { margin-bottom: 0; }
+
+  /* Contacto */
+  .contact p { max-width: 34em; }
+  footer { padding: 28px 0 56px; color: var(--muted); font-size: 0.95rem; border-top: 1px solid var(--rule); }
+
+  @media (min-width: 720px) {
+    .timeline li { grid-template-columns: 180px 1fr; gap: 24px; padding-left: 34px; }
+    .skills { grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  }
+  @media (min-width: 900px) {
+    .hero { grid-template-columns: 1.15fr 0.85fr; gap: 64px; padding: 56px 0 96px; }
+    .ticket-wrap { transform: rotate(1.2deg); }
+    .project { grid-template-columns: 1.2fr 0.8fr; gap: 56px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <span class="name">Acserne Occesit</span>
+    <nav aria-label="Secciones">
+      <a href="#proyecto">Proyecto</a>
+      <a href="#experiencia">Experiencia</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div>
+        <h1>Del mostrador al backend.</h1>
+        <p class="lede">Soy estudiante de Ingeniería en Informática, mención en Analítica Avanzada, y busco mi práctica laboral en desarrollo backend o soporte TI.</p>
+        <p class="lede-sub">Antes de programar sistemas de gestión, administré negocios y operé un sistema de envíos de divisas. Sé cómo se ve un error cuando cuesta dinero.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#proyecto">Ver mi proyecto</a>
+          <a class="btn btn-secondary" href="mailto:valdezwyclef96@gmail.com?subject=Pr%C3%A1ctica%20laboral">Escribirme</a>
+        </div>
+      </div>
+
+      <div class="ticket-wrap">
+        <div class="ticket" role="group" aria-label="Resumen de perfil en formato de boleta">
+          <div class="ticket-name">Acserne Occesit</div>
+          <p class="ticket-sub">Ingeniería en Informática, IPP</p>
+          <hr class="dash">
+          <div class="line"><b>Desarrollo backend</b><span>Node.js, Express, PostgreSQL</span></div>
+          <div class="line"><b>Soporte TI</b><span>Windows, Docker, Shell</span></div>
+          <div class="line"><b>Atención al cliente</b><span>desde 2022, hasta hoy</span></div>
+          <div class="line"><b>Envíos de divisas</b><span>$20–30 millones al mes</span></div>
+          <div class="line"><b>Administración</b><span>minimarket y botillería</span></div>
+          <hr class="dash">
+          <div class="total"><span>Disponible</span><span>julio 2027</span></div>
+          <p class="ticket-note">Para práctica laboral en backend o soporte TI</p>
+          <div class="bars" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+
+    <section id="proyecto" aria-labelledby="h-proyecto">
+      <h2 id="h-proyecto">Proyecto</h2>
+      <div class="project">
+        <div>
+          <h3 class="title">ComercialX Cockpit</h3>
+          <p class="stack">Node.js, Express, PostgreSQL, Sequelize, JWT, Docker</p>
+          <p>Un sistema de gestión pensado para negocios como los que administré: inventario, flujo de caja y alertas de stock y vencimientos, con una interfaz de línea de comandos para gestionar, auditar y exportar.</p>
+          <p class="status"><strong>Estado: en pausa.</strong> El prototipo visual sigue publicado. El backend llegó a estar desplegado y hoy no está en funcionamiento. Pienso retomarlo.</p>
+          <ul class="facts">
+            <li>Autenticación con JWT, migraciones y seeders sobre PostgreSQL con Sequelize.</li>
+            <li>Módulos de productos, flujo de caja y alertas, con tareas programadas (cron).</li>
+            <li>Contenedores con Docker y docker-compose.</li>
+            <li>Script de despliegue con respaldo: publica en GitHub Pages, Netlify o en un servidor local.</li>
+          </ul>
+          <div class="links">
+            <a class="btn btn-primary" href="https://acserne.github.io/innovacioncomercialx-backend/" target="_blank" rel="noopener">Ver el prototipo</a>
+            <a class="btn btn-secondary" href="https://github.com/ACSERNE/innovacioncomercialx-backend" target="_blank" rel="noopener">Ver el código</a>
+          </div>
+        </div>
+
+        <aside class="menu-panel" aria-label="Menú diseñado para la interfaz de comandos">
+          <h3>El menú del Cockpit</h3>
+          <p class="hint">Diseñado para la interfaz de comandos.</p>
+          <ul class="menu">
+            <li>Iniciar sesión</li>
+            <li>Crear nuevo producto</li>
+            <li>Ver inventario</li>
+            <li>Flujo de caja</li>
+            <li>Ver estadísticas generales</li>
+            <li>Exportar auditoría en Markdown</li>
+            <li>Activar modo sandbox</li>
+            <li>Ejecutar plugin Analytics</li>
+            <li>y 14 opciones más</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="experiencia" aria-labelledby="h-experiencia">
+      <h2 id="h-experiencia">Experiencia</h2>
+      <ol class="timeline">
+        <li>
+          <div class="when">2022 – hoy</div>
+          <div class="role">
+            <h3>Atención al cliente</h3>
+            <p class="place">Gasolinera</p>
+            <p>Atención directa a clientes.</p>
+          </div>
+        </li>
+        <li>
+          <div class="when">2024 – 2025</div>
+          <div class="role">
+            <h3>Administrador</h3>
+            <p class="place">Botillería y minimercado</p>
+            <p>Administración del negocio.</p>
+          </div>
+        </li>
+        <li>
+          <div class="when">2020 – 2022</div>
+          <div class="role">
+            <h3>Operador de envíos de divisas internacionales</h3>
+            <p class="place">Morechile, desde mi minimarket</p>
+            <p>Atención a clientes y ejecución de envíos, anulaciones, devoluciones y retiros en el sistema. Volumen aproximado de $20 a $30 millones al mes.</p>
+          </div>
+        </li>
+        <li>
+          <div class="when">2019 – 2021</div>
+          <div class="role">
+            <h3>Propietario y administrador</h3>
+            <p class="place">Minimarket</p>
+            <p>Administración del negocio y atención directa al cliente.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="habilidades" aria-labelledby="h-habilidades">
+      <h2 id="h-habilidades">Habilidades y formación</h2>
+      <div class="skills">
+        <div>
+          <h3>Backend y datos</h3>
+          <p>Node.js, Express, SQL y PostgreSQL, Sequelize, JWT, Git y GitHub.</p>
+        </div>
+        <div>
+          <h3>Infraestructura y soporte TI</h3>
+          <p>Windows (diagnóstico y solución de problemas técnicos), Docker, Shell scripting.</p>
+        </div>
+        <div>
+          <h3>Gestión</h3>
+          <p>Administración de negocios, atención al cliente, operaciones transaccionales.</p>
+        </div>
+      </div>
+      <p style="margin-top: 32px; max-width: 38em;"><strong>IPP, Ingeniería en Informática, mención en Analítica Avanzada.</strong> Cursando el 3.er semestre. El 4.º termina en julio de 2027 y después hago la práctica laboral para obtener el título técnico.</p>
+    </section>
+
+    <section id="contacto" class="contact" aria-labelledby="h-contacto">
+      <h2 id="h-contacto">Busco mi práctica para julio de 2027.</h2>
+      <p>Si tu equipo recibe practicantes de backend o soporte TI, escríbeme. Respondo por correo.</p>
+      <div class="links">
+        <a class="btn btn-primary" href="mailto:valdezwyclef96@gmail.com?subject=Pr%C3%A1ctica%20laboral">valdezwyclef96@gmail.com</a>
+        <a class="btn btn-secondary" href="https://github.com/ACSERNE" target="_blank" rel="noopener">GitHub: ACSERNE</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>Acserne Occesit. Portafolio 2026.</footer>
+</div>
+</body>
+</html>
