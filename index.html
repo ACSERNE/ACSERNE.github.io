@@ -218,35 +218,38 @@
       <h2 id="h-proyecto">Proyecto</h2>
       <div class="project">
         <div>
-          <h3 class="title">ComercialX Cockpit</h3>
-          <p class="stack">Node.js, Express, PostgreSQL, Sequelize, JWT, Docker</p>
-          <p>Un sistema de gestión pensado para negocios como los que administré: inventario, flujo de caja y alertas de stock y vencimientos, con una interfaz de línea de comandos para gestionar, auditar y exportar.</p>
-          <p class="status"><strong>Estado: en pausa.</strong> El prototipo visual sigue publicado. El backend llegó a estar desplegado y hoy no está en funcionamiento. Pienso retomarlo.</p>
+          <h3 class="title">ComercialX</h3>
+          <p class="stack">Node.js, Express, PostgreSQL (Neon), Sequelize, React + Vite, JWT, Brevo, Render, Vercel</p>
+          <p>Una plataforma web de ventas e inventario para negocios como los que administré: minimarkets, botillerías y almacenes. Cada empresa tiene su punto de venta, su caja, su inventario y su tienda online, desde el computador o el celular.</p>
+          <p class="status"><strong>Estado: en producción.</strong> Backend desplegado en Render con base de datos PostgreSQL en Neon, y frontend en Vercel. Lo sigo desarrollando.</p>
           <ul class="facts">
-            <li>Autenticación con JWT, migraciones y seeders sobre PostgreSQL con Sequelize.</li>
-            <li>Módulos de productos, flujo de caja y alertas, con tareas programadas (cron).</li>
-            <li>Contenedores con Docker y docker-compose.</li>
-            <li>Script de despliegue con respaldo: publica en GitHub Pages, Netlify o en un servidor local.</li>
+            <li>Arquitectura multiempresa: cada negocio ve solo sus datos, con roles de superadmin, administrador y vendedor.</li>
+            <li>Punto de venta con código de barras, varios medios de pago, anulación de ventas con registro y cierre de caja por turno que detecta faltantes y sobrantes.</li>
+            <li>Inventario por lotes con fecha de vencimiento: alertas desde 30 días antes y descuento de lo que vence primero (FEFO).</li>
+            <li>Costos, márgenes y ganancia por producto, historial de precios y predicción de quiebre de stock con lista de pedido por proveedor.</li>
+            <li>Tareas programadas (cron) que envían alertas de vencimiento y un resumen diario por correo; importación masiva de productos desde Excel.</li>
+            <li>Seguridad: JWT, verificación en dos pasos por correo, contraseñas cifradas con bcrypt. Encontré y corregí fallas reales, como una escalada de rol y rutas públicas que exponían datos.</li>
+            <li>Migré la base de datos de producción de Render a Neon con un script propio, sin perder información, y dejé un respaldo semanal automático con GitHub Actions.</li>
           </ul>
           <div class="links">
-            <a class="btn btn-primary" href="https://acserne.github.io/innovacioncomercialx-backend/" target="_blank" rel="noopener">Ver el prototipo</a>
-            <a class="btn btn-secondary" href="https://github.com/ACSERNE/innovacioncomercialx-backend" target="_blank" rel="noopener">Ver el código</a>
+            <a class="btn btn-primary" href="https://innovacioncomercialx-frontend.vercel.app" target="_blank" rel="noopener">Ver la plataforma</a>
+            <a class="btn btn-secondary" href="mailto:valdezwyclef96@gmail.com?subject=C%C3%B3digo%20de%20ComercialX">Pedir acceso al código</a>
           </div>
         </div>
 
-        <aside class="menu-panel" aria-label="Menú diseñado para la interfaz de comandos">
-          <h3>El menú del Cockpit</h3>
-          <p class="hint">Diseñado para la interfaz de comandos.</p>
+        <aside class="menu-panel" aria-label="Módulos de ComercialX">
+          <h3>Lo que hace hoy</h3>
+          <p class="hint">Módulos en funcionamiento.</p>
           <ul class="menu">
-            <li>Iniciar sesión</li>
-            <li>Crear nuevo producto</li>
-            <li>Ver inventario</li>
-            <li>Flujo de caja</li>
-            <li>Ver estadísticas generales</li>
-            <li>Exportar auditoría en Markdown</li>
-            <li>Activar modo sandbox</li>
-            <li>Ejecutar plugin Analytics</li>
-            <li>y 14 opciones más</li>
+            <li>Punto de venta y comprobante</li>
+            <li>Caja por turno y cuadratura</li>
+            <li>Lotes, vencimientos y ofertas</li>
+            <li>Costos, márgenes y precios</li>
+            <li>Proveedores y pedidos por WhatsApp o correo</li>
+            <li>Libreta de fiado digital</li>
+            <li>Tienda online, marketplace y QR</li>
+            <li>Reportes y resumen diario por correo</li>
+            <li>Versión para celular y modo oscuro</li>
           </ul>
         </aside>
       </div>
@@ -295,11 +298,11 @@
       <div class="skills">
         <div>
           <h3>Backend y datos</h3>
-          <p>Node.js, Express, SQL y PostgreSQL, Sequelize, JWT, Git y GitHub.</p>
+          <p>Node.js, Express, SQL y PostgreSQL, Sequelize, JWT, tareas programadas (cron), Git y GitHub. También React para el frontend.</p>
         </div>
         <div>
           <h3>Infraestructura y soporte TI</h3>
-          <p>Windows (diagnóstico y solución de problemas técnicos), Docker, Shell scripting.</p>
+          <p>Windows (diagnóstico y solución de problemas técnicos), Docker, Shell scripting, despliegue en Render y Vercel, GitHub Actions.</p>
         </div>
         <div>
           <h3>Gestión</h3>
